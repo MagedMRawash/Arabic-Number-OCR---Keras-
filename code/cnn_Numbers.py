@@ -25,7 +25,7 @@ numbersPath = glob.glob('./Google-Colaboratory-datasets/dataset/**/*')
 
 stack =[]
 def blure(image):
-    img = cv2.imread(image)
+    img = cv2.imread(image,0)
     className = image.split('/')[-2][-1]
     stack.append([img,className]) 
 
@@ -100,7 +100,7 @@ training_set = train_datagen.flow(X_train, y_train,
 print('image augmantation process ended')
 
 model.fit_generator(training_set,
-                        #  samples_per_epoch = 825,
+                         samples_per_epoch = 825,
                          nb_epoch = 50,
                          validation_data = validation_set,
                          nb_val_samples = 204)
