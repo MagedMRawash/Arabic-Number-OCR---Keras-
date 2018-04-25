@@ -13,7 +13,6 @@ import glob
 import matplotlib.pyplot as plt
 import imutils
 from sklearn.model_selection import train_test_split
-import tqdm
 
 input_shape = 64 
 no_classes = 10
