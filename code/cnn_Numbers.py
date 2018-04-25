@@ -21,7 +21,7 @@ no_classes = 10
 # dataset prebaration
 
 print('colect dataset') 
-numbersPath = glob.glob('./../dataset/**/*')
+numbersPath = glob.glob('../dataset/**/*')
 
 stack =[]
 def blure(image):
@@ -40,73 +40,73 @@ print('dataset gethering finished , the trained is : ',len(X_train))
 
 
 
-### Modal architecture.
+# ### Modal architecture.
 
-print('model Init start')
+# print('model Init start')
 
-model = Sequential()
+# model = Sequential()
 
-model.add(Conv2D(32,(3,3),strides=1,input_shape=(input_shape,input_shape,1),activation='relu'))
-model.add(MaxPooling2D(pool_size=(2,2)))
+# model.add(Conv2D(32,(3,3),strides=1,input_shape=(input_shape,input_shape,1),activation='relu'))
+# model.add(MaxPooling2D(pool_size=(2,2)))
           
-model.add(Conv2D(64,(3,3),input_shape=(input_shape,input_shape,1),activation='relu'))
-model.add(MaxPooling2D(pool_size=(2,2)))
+# model.add(Conv2D(64,(3,3),input_shape=(input_shape,input_shape,1),activation='relu'))
+# model.add(MaxPooling2D(pool_size=(2,2)))
           
-model.add(Conv2D(128,(3,3),input_shape=(input_shape,input_shape,1),activation='relu'))
-model.add(MaxPooling2D(pool_size=(2,2)))
+# model.add(Conv2D(128,(3,3),input_shape=(input_shape,input_shape,1),activation='relu'))
+# model.add(MaxPooling2D(pool_size=(2,2)))
 
-model.add(Flatten())
+# model.add(Flatten())
 
-model.add(Dense(units=1000,activation='relu'))
-model.add(BatchNormalization())
-model.add(Dropout(0.4))
-model.add(Dense(units = 500, activation = 'relu'))
-model.add(BatchNormalization())
-model.add(Dropout(0.4))
-model.add(Dense(units = 100, activation = 'relu'))
-model.add(BatchNormalization())
-model.add(Dropout(0.4))
-model.add(Dense(units = no_classes, activation = 'softmax'))
+# model.add(Dense(units=1000,activation='relu'))
+# model.add(BatchNormalization())
+# model.add(Dropout(0.4))
+# model.add(Dense(units = 500, activation = 'relu'))
+# model.add(BatchNormalization())
+# model.add(Dropout(0.4))
+# model.add(Dense(units = 100, activation = 'relu'))
+# model.add(BatchNormalization())
+# model.add(Dropout(0.4))
+# model.add(Dense(units = no_classes, activation = 'softmax'))
 
-model.summary()
-print(' ended')
+# model.summary()
+# print(' ended')
 
-## code compilation line 
-print('compilation start')
+# ## code compilation line 
+# print('compilation start')
 
-model.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
-
-
-print('end')
-print('image augmantation process')
-
-train_datagen = ImageDataGenerator(rescale = 1./255,
-                                   shear_range = 0.3,
-                                   zoom_range = 0.35,
-                                   validation_split=0.2)
-
-validation_datagen = ImageDataGenerator(rescale = 1./255,
-                                        shear_range = 0.3,
-                                        zoom_range = 0.35)
+# model.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
 
 
-validation_set = validation_datagen.flow(X_test, y_test,
-                                            save_to_dir='validation',
-                                            save_format='png',
-                                            batch_size = 50)
-training_set = train_datagen.flow(X_train, y_train,
-                                            batch_size = 50)
+# print('end')
+# print('image augmantation process')
 
-print('image augmantation process ended')
+# train_datagen = ImageDataGenerator(rescale = 1./255,
+#                                    shear_range = 0.3,
+#                                    zoom_range = 0.35,
+#                                    validation_split=0.2)
 
-model.fit_generator(training_set,
-                        #  samples_per_epoch = 825,
-                         nb_epoch = 50,
-                         validation_data = validation_set,
-                         nb_val_samples = 204)
+# validation_datagen = ImageDataGenerator(rescale = 1./255,
+#                                         shear_range = 0.3,
+#                                         zoom_range = 0.35)
 
-# train_datagen.fit(images, augment=True, seed=seed)
-print('model started saving your prediction model')
-model.save('/output/​ar_numbers_newset_10sept17.h5')
-print('conguratolations you are free to use the classifier :)')
+
+# validation_set = validation_datagen.flow(X_test, y_test,
+#                                             save_to_dir='validation',
+#                                             save_format='png',
+#                                             batch_size = 50)
+# training_set = train_datagen.flow(X_train, y_train,
+#                                             batch_size = 50)
+
+# print('image augmantation process ended')
+
+# model.fit_generator(training_set,
+#                         #  samples_per_epoch = 825,
+#                          nb_epoch = 50,
+#                          validation_data = validation_set,
+#                          nb_val_samples = 204)
+
+# # train_datagen.fit(images, augment=True, seed=seed)
+# print('model started saving your prediction model')
+# model.save('/output/​ar_numbers_newset_10sept17.h5')
+# print('conguratolations you are free to use the classifier :)')
  
