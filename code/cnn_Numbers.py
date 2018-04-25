@@ -21,7 +21,7 @@ no_classes = 10
 # dataset prebaration
 
 print('colect dataset') 
-numbersPath = glob.glob('../dataset/**/*')
+numbersPath = glob.glob('./Google-Colaboratory-datasets/dataset/**/*')
 
 stack =[]
 def blure(image):
