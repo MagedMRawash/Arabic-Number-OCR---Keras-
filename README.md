@@ -18,6 +18,12 @@
   the dataset URL : https://github.com/Rawash/Google-Colaboratory-datasets
 
 ## Notebook code:
-  i used Google Colaboratory to train the model using GPU so in notebook code i add some codes to help me upload the dataset to Google Colaboratory also to dawnload the model form it  
+  I used Google Colaboratory to train the model using GPU so in notebook code i add some codes to help me upload the dataset to Google Colaboratory also to dawnload the model form it.
+
+## Google Colaboratory Links : (online Notebook - GPU)
+ model creatition : https://drive.google.com/file/d/1G_FS2kgWJFrfue7RJ50uCmgbNSnacXxS/view?usp=sharing
+ 
+ evaluation code  : https://drive.google.com/file/d/1VupCqg2tfzy04jylECdHoxVQc3ydLoFW/view?usp=sharing
+ 
 
 aslo you can find in the repo.:  https://github.com/Rawash/Google-Colaboratory-datasets the initial model (v2) and the final model (v6) in the model folder  
